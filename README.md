@@ -1,10 +1,23 @@
 decompile - Recursive Java Decompiler
 =====================================
 
-## Instructions
+## Usage
 
-1. Place .class files in nested directory hierarchy within the `classes` folder
-2. Make sure the `src` folder is empty
-3. Place the decompile directory in a path that doesn't contain spaces, such as `D:\decompile`
-4. Run `decompile.bat`
-5. Expect the .java files inside `src` folder in the same directory structure as the respective .class files
+From command line executes the following command:
+
+```
+c:\decompile [source] [destination]
+
+    [source]      : Folder containing the .class files in its respective packages
+    
+    [destination] : Folder where the source code will be decompiled
+    
+```    
+**Notice:**
+* Files will be placed in its respective folder according to the package declaration.
+* if the destination folder contains decompilated classes, they will be overriden.
+* New line before opening brace will be removed.
+* Empty constructors will be removed.
+
+## OS supported
+Windows
