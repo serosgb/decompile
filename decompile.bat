@@ -1,17 +1,8 @@
 @echo off
 
-mkdir src
-mkdir classes
-
-echo Copying .class files...
-xcopy /Q /E /Y classes src
+mkdir %2
 
 echo Decompiling .class files into .java files...
-for /R src %%a in (*.class) do jad -d %%~dpa -o -s .java "%%a"
-
-echo Deleting .class files...
-cd src
-del /S /Q *.class
-cd..
+for /R %1 %%a in (*.class) do jad -d %2 -o -r -noctor -nonlb -s .java "%%a" 
 
 pause
